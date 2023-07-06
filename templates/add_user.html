@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Add User - MovieWeb App</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="static/assets/css/main.css" />
+</head>
+<body>
+    <!-- Form -->
+    <section id="add-user" class="wrapper style2">
+        <div class="inner">
+            <header class="align-left">
+                <h2>Add User</h2>
+            </header>
+            <form method="POST" action="/add_user">
+                <div class="row uniform">
+                    <div class="6u 12u$(small)">
+                        <input type="text" name="name" id="name" value="" placeholder="Name" required />
+                    </div>
+
+                    <div class="12u$">
+                        <ul class="actions align-left">
+                            <li><input type="submit" value="Add User" class="special" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="static/assets/js/jquery.min.js"></script>
+    <script src="static/assets/js/jquery.scrollex.min.js"></script>
+    <script src="static/assets/js/skel.min.js"></script>
+    <script src="static/assets/js/util.js"></script>
+    <script src="static/assets/js/main.js"></script>
+</body>
+</html>

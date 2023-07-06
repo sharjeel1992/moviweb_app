@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>USER MOVIES</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+	</head>
+	<body>
+	<section id="one" class="wrapper style2">
+		{% for movie in movies%}
+		<div class="inner">
+			<div class="grid-style">
+				<div>
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<h2>{{movie['name']}}</h2>
+								<h1> Directed By: {{movie['director']}}</h1>
+								<h1> Release Year: {{movie['year']}}</h1>
+								<h1> IMB Rating: {{movie['rating']}}</h1>
+							</header>
+
+							<footer class="align-right">
+    							<form action="{{ url_for('delete_movie', user_id=user_id, movie_id=movie['id']) }}" method="POST">
+    							<button type="submit" class="button alt">DELETE</button>
+								</form>
+    							<a href="{{ url_for('update_movie', user_id=user_id, movie_id=movie['id']) }}" class="button alt">EDIT</a>
+							</footer>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{%endfor%}
+		<footer class="align-center">
+			 <a href="{{ url_for('add_movie', user_id=user_id) }}" class="button alt">ADD MOVIE</a>
+		</footer>
+	</section>
+
+
+
+	<!-- Scripts -->
+    <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/jquery.scrollex.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/skel.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Update Movie</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+	</head>
+	<body>
+		<section id="one" class="wrapper style2">
+			<div class="inner">
+				<div class="box">
+					<div class="content">
+						<header class="align-center">
+							<h2>Update Movie</h2>
+						</header>
+						<form action="{{ url_for('update_movie', user_id=movie['user_id'], movie_id=movie['id']) }}" method="POST">
+							<div class="row gtr-uniform">
+								<div class="col-6 col-12-xsmall">
+									<input type="text" name="name" value="{{ movie['name'] }}" required>
+								</div>
+								<div class="col-6 col-12-xsmall">
+									<input type="text" name="director" value="{{ movie['director'] }}" required>
+								</div>
+								<div class="col-6 col-12-xsmall">
+									<input type="number" name="year" value="{{ movie['year'] }}" required>
+								</div>
+								<div class="col-6 col-12-xsmall">
+									<input type="number" name="rating" value="{{ movie['rating'] }}" required>
+								</div>
+								<div class="col-12">
+									<button type="submit" class="button alt">Update</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Scripts -->
+		<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/jquery.scrollex.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/skel.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+	</body>
+</html>

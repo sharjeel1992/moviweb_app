@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>MOVIE APP-USERS</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+	</head>
+	<body>
+	<!-- Banner -->
+	<section class="banner full">
+		<article>
+			<img src="static/images/pic03.jpg" alt="" />
+			<div class="inner">
+				<h2>USERS</h2>
+				<div class="table">
+      			<table>
+    				<tr>
+      				<th>Names</th>
+    				</tr>
+    				<tr>
+        			{%for user in users%}
+      				<th><li><a href="/users/{{ user.id }}">{{ user.name }}</a></li></th>
+    				</tr>
+      				{% endfor %}
+  				</table>
+				</div>
+				<button onclick="window.location.href = 'add_user';">add user</button>
+			</div>
+		</article>
+	</section>
+
+	<!-- Scripts -->
+	<script src="static/assets/js/jquery.min.js"></script>
+	<script src="static/assets/js/jquery.scrollex.min.js"></script>
+	<script src="static/assets/js/skel.min.js"></script>
+	<script src="static/assets/js/util.js"></script>
+	<script src="static/assets/js/main.js"></script>
+
+	</body>
+</html>
+
